@@ -55,11 +55,10 @@ public class MainActivity extends AppCompatActivity {
         updateUsersList();
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> arg0, View view, int position, long index) {
-                System.out.println("Edit index >>>> " + index);
-                Intent i = new Intent(MainActivity.this, DetailActivity.class);
-                i.putExtra("data", (DataEntry) view.getTag());
-                startActivity(i);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                intent.putExtra("data", (DataEntry) view.getTag());
+                MainActivity.this.startActivity(intent);
             }
         });
 

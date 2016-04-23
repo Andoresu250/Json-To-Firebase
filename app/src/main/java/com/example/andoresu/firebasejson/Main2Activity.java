@@ -12,14 +12,12 @@ import android.widget.TextView;
 
 import java.io.InputStream;
 
-
-public class DetailActivity extends AppCompatActivity {
-
+public class Main2Activity extends AppCompatActivity {
     private DataEntry mDataEntry;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_main2);
 
         Intent i = getIntent();
         mDataEntry = (DataEntry) i.getSerializableExtra("data");
@@ -32,8 +30,7 @@ public class DetailActivity extends AppCompatActivity {
         apellido.setText(mDataEntry.getLastName());
         genero.setText(mDataEntry.getGender());
 
-        new DownloadImageTask((ImageView) findViewById(R.id.imageView))
-                .execute(mDataEntry.getPicture());
+        new DownloadImageTask((ImageView) findViewById(R.id.imageView)).execute(mDataEntry.getPicture());
 
     }
 
@@ -61,5 +58,4 @@ public class DetailActivity extends AppCompatActivity {
             bmImage.setImageBitmap(result);
         }
     }
-
 }

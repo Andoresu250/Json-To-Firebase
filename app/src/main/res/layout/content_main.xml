@@ -11,14 +11,11 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.andoresu.firebasejson.MainActivity"
     tools:showIn="@layout/activity_main">
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-
-     />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
