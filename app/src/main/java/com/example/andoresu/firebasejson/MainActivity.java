@@ -2,6 +2,7 @@ package com.example.andoresu.firebasejson;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -51,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
         listaUsuarios = new ArrayList<>();
         listView = (ListView) findViewById(R.id.listView);
         updateUsersList();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View view, int position, long index) {
+                System.out.println("Edit index >>>> " + index);
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("data", (DataEntry) view.getTag());
+                startActivity(i);
+            }
+        });
 
     }
 
@@ -73,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 listView.setAdapter(null);
                 CustomAdapter adapter = new CustomAdapter(MainActivity.this, users, ids, userRef);
                 listView.setAdapter(adapter);
+
             }
 
             @Override

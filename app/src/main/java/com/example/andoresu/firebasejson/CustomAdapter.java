@@ -1,6 +1,7 @@
 package com.example.andoresu.firebasejson;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,7 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        DataEntry entry = listEntries.get(position);
+        final DataEntry entry = listEntries.get(position);
 
         final String key = ids.get(position);
 
@@ -66,6 +67,15 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
             @Override
             public void onClick(View view) {
                 rootRef.child(key).removeValue();
+            }
+        });
+        ImageButton detailsBtn = (ImageButton) convertView.findViewById(R.id.btnDetails);
+        detailsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, DetailActivity.class);
+                i.putExtra("data", entry);
+                context.startActivity(i);
             }
         });
 
