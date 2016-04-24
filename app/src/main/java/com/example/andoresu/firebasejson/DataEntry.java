@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class DataEntry implements Serializable {
 
     private String gender;
-    private String fistName;
+    private String firstName;
     private String lastName;
     private String picture;
 
@@ -15,9 +15,9 @@ public class DataEntry implements Serializable {
 
     }
 
-    public DataEntry(String gender, String fistName, String lastName, String picture) {
+    public DataEntry(String gender, String firstName, String lastName, String picture) {
         this.gender = gender;
-        this.fistName = fistName;
+        this.firstName = firstName;
         this.lastName = lastName;
         this.picture = picture;
     }
@@ -30,12 +30,12 @@ public class DataEntry implements Serializable {
         this.gender = gender;
     }
 
-    public String getFistName() {
-        return fistName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

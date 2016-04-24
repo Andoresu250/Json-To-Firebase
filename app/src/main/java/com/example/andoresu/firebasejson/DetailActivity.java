@@ -12,12 +12,12 @@ import android.widget.TextView;
 
 import java.io.InputStream;
 
-public class Main2Activity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
     private DataEntry mDataEntry;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_detail);
 
         Intent i = getIntent();
         mDataEntry = (DataEntry) i.getSerializableExtra("data");
@@ -26,7 +26,7 @@ public class Main2Activity extends AppCompatActivity {
         TextView apellido = (TextView) findViewById(R.id.textViewApellido);
         TextView genero = (TextView) findViewById(R.id.textViewGenero);
 
-        nombre.setText(mDataEntry.getFistName());
+        nombre.setText(mDataEntry.getFirstName());
         apellido.setText(mDataEntry.getLastName());
         genero.setText(mDataEntry.getGender());
 

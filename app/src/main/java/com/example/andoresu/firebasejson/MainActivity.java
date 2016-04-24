@@ -7,8 +7,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                 intent.putExtra("data", (DataEntry) view.getTag());
                 MainActivity.this.startActivity(intent);
             }
@@ -74,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     System.out.println("ID >>>>>>>>> : " + postSnapshot.getValue());
                     users.add(new DataEntry(postSnapshot.child("gender").getValue().toString(),
-                            postSnapshot.child("fistName").getValue().toString(),
+                            postSnapshot.child("firstName").getValue().toString(),
                             postSnapshot.child("lastName").getValue().toString(),
                             postSnapshot.child("picture").getValue().toString()
                     ));
@@ -156,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
                         JSONObject name = c.getJSONObject("name");
 
-                        dataEntry.setFistName(name.getString("first"));
+                        dataEntry.setFirstName(name.getString("first"));
                         dataEntry.setLastName(name.getString("last"));
 
                         JSONObject imageObject = c.getJSONObject("picture");

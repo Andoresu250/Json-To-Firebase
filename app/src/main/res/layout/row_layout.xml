@@ -71,12 +71,14 @@
                 android:src="@android:drawable/ic_menu_delete"
                 android:layout_alignTop="@+id/tvField1"
                 android:layout_alignParentRight="true"
+                android:background="#BA1D1D"
                 android:layout_alignParentEnd="true" />
             <ImageButton
                 android:layout_width="50dip"
                 android:layout_height="50dip"
                 android:layout_marginRight="50dp"
                 android:id="@+id/btnEdit"
+                android:background="#BA831D"
                 android:src="@android:drawable/ic_menu_edit"
                 android:layout_alignTop="@+id/tvField1"
                 android:layout_alignParentRight="true"

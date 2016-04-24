@@ -65,7 +65,7 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
         TextView f1 = (TextView) convertView.findViewById(R.id.tvField1);
         TextView f2 = (TextView) convertView.findViewById(R.id.tvField2);
 
-        f1.setText(String.valueOf(entry.getFistName()));
+        f1.setText(String.valueOf(entry.getFirstName()));
         f2.setText(String.valueOf(entry.getLastName()));
 
         ImageButton deleteBtn = (ImageButton) convertView.findViewById(R.id.btnRemove);
@@ -88,7 +88,7 @@ public class CustomAdapter extends BaseAdapter implements View.OnClickListener {
                 editUser.show();
 
                 final EditText name = (EditText) editUser.findViewById(R.id.editName);
-                name.setText(entry.getFistName());
+                name.setText(entry.getFirstName());
                 final EditText lastName = (EditText) editUser.findViewById(R.id.editLastName);
                 lastName.setText(entry.getLastName());
 
